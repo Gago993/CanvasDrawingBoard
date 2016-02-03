@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/simplecolorpicker.css" rel="stylesheet" type="text/css" >
+    <link href="../css/seekbar.css" rel="stylesheet" type="text/css" >
+
+</head>
+<body class="container-fluid">
+
+
+<div class="col-lg-12 col-md-12">
+
+    <div class="canvas-container">
+
+        <div class="tools col-md-2">
+
+            <div>
+                <input type="image" class="active" src="../imgs/tools/brush.png" onclick="setLine()"/>
+            </div>
+
+            <div>
+                <input type="image" src="../imgs/tools/circle.png" onclick="setCircle()" />
+            </div>
+
+            <div>
+                <input type="image" src="../imgs/tools/rectangle.png" onclick="setRectangle()" />
+            </div>
+
+            <div>
+                <input type="image" src="../imgs/tools/eraser.png" onclick="setEraser()" />
+            </div>
+
+            <div>
+                <input type="image" src="../imgs/tools/bucket.png" onclick="setFill()" />
+            </div>
+
+            <div>
+                <img src="../imgs/tools/undo.png" onclick="undoBoard()" />
+            </div>
+
+            <div>
+                <a id="downloadLink" download="img.jpg">
+                    <img src="../imgs/tools/save.png" />
+                </a>
+            </div>
+
+            <div>
+                <select name="colorpicker-picker-longlist">
+                    <option value="#ac725e">#ac725e</option>
+                    <option value="#d06b64">#d06b64</option>
+                    <option value="#f83a22">#f83a22</option>
+                    <option value="#fa573c">#fa573c</option>
+                    <option value="#ff7537">#ff7537</option>
+                    <option value="#ffad46">#ffad46</option>
+                    <option value="#42d692">#42d692</option>
+                    <option value="#16a765">#16a765</option>
+                    <option value="#7bd148">#7bd148</option>
+                    <option value="#b3dc6c">#b3dc6c</option>
+                    <option value="#fbe983">#fbe983</option>
+                    <option value="#fad165">#fad165</option>
+                    <option value="#92e1c0">#92e1c0</option>
+                    <option value="#9fe1e7">#9fe1e7</option>
+                    <option value="#9fc6e7">#9fc6e7</option>
+                    <option value="#4986e7">#4986e7</option>
+                    <option value="#9a9cff">#9a9cff</option>
+                    <option value="#b99aff">#b99aff</option>
+                    <option value="#c2c2c2">#c2c2c2</option>
+                    <option value="#cabdbf">#cabdbf</option>
+                    <option value="#cca6ac">#cca6ac</option>
+                    <option value="#f691b2">#f691b2</option>
+                    <option value="#cd74e6">#cd74e6</option>
+                    <option value="#a47ae2">#a47ae2</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-8 canvas-boards">
+            <canvas id="board" width="620" height="440"
+                    style="z-index: 0;"></canvas>
+            <canvas id="board2" width="620" height="440"
+                    style="z-index: 1;"></canvas>
+
+            <div id="seekbar-container-horizontal-red" class="seekbar"></div>
+        </div>
+
+        <div class="drawings col-md-2">
+            <div class="pre-scrollable">
+                <div class="thumb">
+                    <a class="thumbnail" href="#" id="img1">
+                        <img class="img-responsive" src="../imgs/img1.png" alt="">
+                    </a>
+                </div>
+                <div class="thumb">
+                    <a class="thumbnail" href="#" id="img2">
+                        <img class="img-responsive" src="../imgs/img2.png" alt="">
+                    </a>
+                </div>
+                <div class="thumb">
+                    <a class="thumbnail" href="#" id="img3">
+                        <img class="img-responsive" src="../imgs/img3.png" alt="">
+                    </a>
+                </div>
+                <div class="thumb">
+                    <a class="thumbnail" href="#" id="img4">
+                        <img class="img-responsive" src="../imgs/img4.png" alt="">
+                    </a>
+                </div>
+                <div class="thumb">
+                    <a class="thumbnail" href="#" id="img5">
+                        <img class="img-responsive" src="../imgs/img5.png" alt="">
+                    </a>
+                </div>
+                <div class="thumb">
+                    <a class="thumbnail" href="#" id="img6">
+                        <img class="img-responsive" src="../imgs/img6.png" alt="">
+                    </a>
+                </div>
+                <div class="thumb">
+                    <a class="thumbnail" href="#" id="img7">
+                        <img class="img-responsive" src="../imgs/img7.png" alt="">
+                    </a>
+                </div>
+                <div class="thumb">
+                    <a class="thumbnail" href="#">
+                        <img class="img-responsive" src="../imgs/img8.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+<script type="application/javascript" src="../js/libs/jquery-2.1.4.min.js"></script>
+<script type="application/javascript" src="../js/libs/simplecolorpicker.js"></script>
+<script type="application/javascript" src="../js/libs/seekbar.js"></script>
+
+<script type="application/javascript" src="../js/init.js"></script>
+<script type="application/javascript" src="../js/Shapes/shape.js"></script>
+<script type="application/javascript" src="../js/Shapes/eraser.js"></script>
+<script type="application/javascript" src="../js/Shapes/line.js"></script>
+<script type="application/javascript" src="../js/Shapes/circle.js"></script>
+<script type="application/javascript" src="../js/Shapes/rectangle.js"></script>
+<script type="application/javascript" src="../js/Shapes/fill.js"></script>
+<script type="application/javascript" src="../js/test.js"></script>
+<script type="application/javascript" src="../js/imageLoader.js"></script>
+
+
+<script>
+
+    $(document).ready(function(){
+        $('select[name="colorpicker-picker-longlist"]').simplecolorpicker({picker: true});
+
+        $('#downloadLink').click(function () {
+            console.log("download");
+
+            var dt = canvas.toDataURL('image/jpeg');
+            this.href = dt;
+        });
+
+        $('input[type=image]').click(function(event){
+
+            $(this).parent().parent().find('input[type=image]').removeClass('active');
+            $(this).addClass('active');
+
+        });
+
+
+        var redSlider = new Seekbar.Seekbar({
+            renderTo: "#seekbar-container-horizontal-red",
+            minValue: 1, maxValue: 20,
+            valueListener: function (value) {
+                this.value = Math.round(value);
+                lineWidth = this.value;
+            },
+            thumbColor: '#26439C',
+            negativeColor: '#75A8CE',
+            positiveColor: '#CCC',
+            value: 1
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
